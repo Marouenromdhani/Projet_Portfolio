@@ -23,7 +23,7 @@ class Formation
     #[ORM\Column(type: 'date_immutable')]
     private ?\DateTimeInterface $StartAt = null;
 
-    #[ORM\Column(type: 'date_immutable,nulabe:true')]
+    #[ORM\Column]
     private ?\DateTimeInterface $EndedAt = null;
 
     public function getId(): ?int
