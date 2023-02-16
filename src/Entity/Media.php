@@ -17,7 +17,8 @@ class Media
     private ?string $Path = null;
     /**
      * @var Refrence|null
-     * @ORm/ManyToOne(targetEntity="Refrence",inversedBay="medias")
+     * @ORM\ManyToOne(targetEntity="Refrence",inversedBay="medias")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private ?Refrence $refrence;
 

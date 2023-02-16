@@ -31,6 +31,7 @@ class Refrence
 
     /**
      * @var Collection
+     * @ORM\OneToMany(targetEntity="Media" ,mappedBy="refrence",cascade={"persist"},orphanRemoval=true)
      */
     private Collection $media;
 
@@ -51,7 +52,8 @@ class Refrence
     }
 
     /**
-     * @param Collection $media
+     * @param Collection $medias
+     * @
      */
     public function setMedia(Collection $media): void
     {
@@ -113,4 +115,11 @@ class Refrence
 
         return $this;
     }
+public function addMedia(Media $media):void
+{
+     if (!$this->medias->contains($media)){
+         $media->setRefrence($this);
+         $this->medias->add($media);
+     }
+}
 }
